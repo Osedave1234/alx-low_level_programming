@@ -1,19 +1,29 @@
-#include "holberton.h"
+#include "main.h"
 /**
-  * print_alphabet_x10 - repeats the print_alphabet 10 times.
-  * Return: Nothing.
-  */
-void print_alphabet_x10(void)
+ * print_sign - Determines whether an integer is positive, negative or zero.
+ * @n: the number to be checked.
+ * Return: 1 if positive, 0 if zero, -1 if negative, / if not a digit.
+ */
+int print_sign(int n)
 {
-	int i;
-	char c;
-
-	for (i = 0; i < 10; ++i)
+	if (n > 0)
 	{
-		for (c = 'a'; c <= 'z'; c++)
-		{
-			_putchar(c);
-		}
-		_putchar('\n');
+		_putchar('+');
+		return (1);
+	}
+	else if (n == 0)
+	{
+		_putchar('0');
+		return (0);
+	}
+	else if (n < 0)	
+	{
+		_putchar('-');
+		return (-1);
+	}
+	else
+	{
+		_putchar('-');
+		return ('/');
 	}
 }
