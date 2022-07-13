@@ -1,26 +1,24 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * puts_half - a function that prints half of a string
- * if odd len, n = (length_of_the_string - 1) / 2
- * @str: input
- * Return: half of input
+ *puts_half- print half
+ *@str:checked
+ *Return:nothing
  */
 void puts_half(char *str)
 {
-	int i, n, len
+	int i, n;
 
-	len = 0;
-
-	for (i = 0; str[i] != '\0'; i++)
-		len++;
-
-	n = (len / 2);
-
-	if ((len % 2) == 1)
-		n = ((len + 1) / 2);
-
-	for (i = n; str[i] != '\0'; i++)
-		_putchar(str[i]);
+	i = 0;
+	while (*(str + i) != '\0')
+	{
+		i++;
+	}
+	n = i / 2;
+	while (n <= i)
+	{
+		_putchar(str[n]);
+		n++;
+	}
 	_putchar('\n');
 }
