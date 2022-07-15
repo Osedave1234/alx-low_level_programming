@@ -2,29 +2,28 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ * rot13 - ...
+ * @s: ...
  *
- * Return: Always 0.
+ * Return: ...
  */
-int main(void)
+char *rot13(char *s)
 {
-	char s[];
-	char *p;
+	int a = 0;
 
-	p = rot13(s);
-	printf("%s", p);
-	printf("------------------------------------\n");
-	printf("%s", s);
-	printf("------------------------------------\n");
-	p = rot13(s);
-
-	printf(p);
-	printf("------------------------------------\n");
-	printf("%s", s);
-	printf("------------------------------------\n");
-	p = rot13(s);
-
-	printf(p);
-	printf("------------------------------------\n");
-	return (0);
+	while (s[a])
+	{
+		while ((s[a] >= 'a' && s[a] <= 'z') || (s[a] >= 'A' && s[a] <= 'Z'))
+		{
+			if ((s[a] > 'm' && s[a] <= 'z') || (s[a] > 'M' && s[a] <= 'Z'))
+			{
+				s[a] -= 13;
+				break;
+			}
+			s[a] += 13;
+			break;
+		}
+		a++;
+	}
+	return (s);
 }
